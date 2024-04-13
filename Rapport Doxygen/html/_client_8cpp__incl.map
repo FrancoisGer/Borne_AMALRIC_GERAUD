@@ -1,0 +1,9 @@
+<map id="Client.cpp" name="Client.cpp">
+<area shape="rect" id="Node000001" title="Programme de gestion des clients." alt="" coords="47,5,126,32"/>
+<area shape="rect" id="Node000002" href="$_client_8h.html" title="Fichier bibliothèque de la gestion des clients." alt="" coords="54,80,119,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="89,33,89,64,84,64,84,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,155,77,181"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="81,109,59,143,55,140,76,106"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="101,155,163,181"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="96,106,118,140,113,143,92,109"/>
+</map>

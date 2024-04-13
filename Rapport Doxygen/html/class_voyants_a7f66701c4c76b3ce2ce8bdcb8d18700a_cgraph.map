@@ -1,0 +1,5 @@
+<map id="Voyants::BlinkTrappe" name="Voyants::BlinkTrappe">
+<area shape="rect" id="Node000001" title="Fait clignoter la led Trappe." alt="" coords="5,5,151,32"/>
+<area shape="rect" id="Node000002" href="$class_voyants.html#aab1b84eab067d7e341fbfa9ac461f593" title="Donne une couleur fixe à la led Trappe." alt="" coords="199,5,335,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,16,184,16,184,21,151,21"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Voyants::BlinkPrise" name="Voyants::BlinkPrise">
+<area shape="rect" id="Node000001" title="Fait clignoter la led Prise." alt="" coords="5,5,142,32"/>
+<area shape="rect" id="Node000002" href="$class_voyants.html#aa8ee1b89da56867d4d0b0f55ca88a607" title="Donne une couleur fixe à la led Prise." alt="" coords="190,5,317,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="142,16,174,16,174,21,142,21"/>
+</map>

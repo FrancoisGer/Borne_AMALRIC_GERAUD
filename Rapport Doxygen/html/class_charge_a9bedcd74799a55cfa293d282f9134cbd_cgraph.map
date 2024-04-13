@@ -1,0 +1,15 @@
+<map id="Charge::Chargement" name="Charge::Chargement">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,132,146,159"/>
+<area shape="rect" id="Node000002" href="$class_timers.html#accfaeb6aceefb9a8aa8a9ee60a63d577" title="Retourne la valeur en seconde du timer." alt="" coords="202,5,324,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="88,130,132,87,192,42,202,36,205,41,195,46,135,91,91,133"/>
+<area shape="rect" id="Node000003" href="$class_timers.html#a66919c6ab97f525c65baf3945f2b8e75" title="Remise à zéro du timer." alt="" coords="220,56,306,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="107,129,193,92,208,86,210,91,195,97,109,134"/>
+<area shape="rect" id="Node000004" href="$class_voyants.html#a4e320db570133139dab0702f862a8c3a" title=" " alt="" coords="194,107,332,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="146,133,178,129,178,134,146,138"/>
+<area shape="rect" id="Node000005" href="$class_voyants.html#a29ff6cc320e7589c4af719a7eb5d4804" title="Donne une couleur fixe à la led Dispo." alt="" coords="198,157,328,184"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="146,152,183,157,182,162,146,157"/>
+<area shape="rect" id="Node000006" href="$class_voyants.html#aa8ee1b89da56867d4d0b0f55ca88a607" title="Donne une couleur fixe à la led Prise." alt="" coords="199,208,327,235"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="109,157,195,194,210,199,208,204,193,198,107,162"/>
+<area shape="rect" id="Node000007" href="$class_voyants.html#aab1b84eab067d7e341fbfa9ac461f593" title="Donne une couleur fixe à la led Trappe." alt="" coords="195,259,331,285"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="91,157,135,200,195,244,205,250,202,254,192,249,132,204,88,161"/>
+</map>

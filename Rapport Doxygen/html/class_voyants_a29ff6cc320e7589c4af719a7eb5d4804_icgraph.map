@@ -1,0 +1,9 @@
+<map id="Voyants::SetDispo" name="Voyants::SetDispo">
+<area shape="rect" id="Node000001" title="Donne une couleur fixe à la led Dispo." alt="" coords="194,56,324,83"/>
+<area shape="rect" id="Node000002" href="$class_voyants.html#ae86e8a9cbd019b7fde395826a34f52b6" title="Fait clignoter la led Dispo." alt="" coords="6,5,145,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="192,54,126,35,127,30,194,49"/>
+<area shape="rect" id="Node000003" href="$class_charge.html#a9bedcd74799a55cfa293d282f9134cbd" title=" " alt="" coords="5,56,146,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="178,72,146,72,146,67,178,67"/>
+<area shape="rect" id="Node000004" href="$borne_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="51,107,100,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="194,90,101,116,100,111,193,85"/>
+</map>

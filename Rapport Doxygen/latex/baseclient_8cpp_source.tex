@@ -1,0 +1,111 @@
+\doxysection{baseclient.\+cpp}
+\hypertarget{baseclient_8cpp_source}{}\label{baseclient_8cpp_source}\mbox{\hyperlink{baseclient_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00011}00011\ \textcolor{preprocessor}{\#include"{}\mbox{\hyperlink{baseclient_8h}{baseclient.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00017}\mbox{\hyperlink{class_base_client_afac923d76994d020493b283908c24b3d}{00017}}\ \mbox{\hyperlink{class_base_client_afac923d76994d020493b283908c24b3d}{BaseClient::BaseClient}}()}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00018}00018\ \{}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00019}00019\ \ \ \ \ NombreClient=2;}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00020}00020\ \ \ \ \ Numero.push\_back(24);}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00021}00021\ \ \ \ \ Numero.push\_back(31);}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00022}00022\ \ \ \ \ MDP.push\_back(1234);}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00023}00023\ \ \ \ \ MDP.push\_back(5678);}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00024}00024\ \ \ \ \ SU.push\_back(0);}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00025}00025\ \ \ \ \ SU.push\_back(1);}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00026}00026\ \ \ \ \ Nom.push\_back(\textcolor{stringliteral}{"{}AMALRIC"{}});}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00027}00027\ \ \ \ \ Nom.push\_back(\textcolor{stringliteral}{"{}GERAUD"{}});}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00028}00028\ \ \ \ \ Prenom.push\_back(\textcolor{stringliteral}{"{}Pierre"{}});}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00029}00029\ \ \ \ \ Prenom.push\_back(\textcolor{stringliteral}{"{}François"{}});}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00030}00030\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00031}00031\ \}}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00040}\mbox{\hyperlink{class_base_client_acda6b6e3d331ece35e513b31fcf2bbc4}{00040}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_base_client_acda6b6e3d331ece35e513b31fcf2bbc4}{BaseClient::identifier}}(\textcolor{keywordtype}{int}\ Cartelue)}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00041}00041\ \{}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00042}00042\ \ \ \ \ \textcolor{keywordtype}{int}\ CodeSaisi=0;}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00043}00043\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;i<NombreClient;i++)}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00044}00044\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(Cartelue==Numero[i])}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ cout<<\textcolor{stringliteral}{"{}Entrez\ le\ code:\ "{}}<<endl;}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ cin>>CodeSaisi;}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//cout<<"{}votre\ code:\ "{}<<CodeSaisi<<endl;}}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//cout<<"{}Le\ code\ en\ memoire"{}<<MDP[i]<<endl;}}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(CodeSaisi==MDP[i])}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//cout<<"{}Vous\ etes\ l\ element:"{}<<i<<endl;\ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ i;}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00060}00060\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00061}00061\ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00062}00062\ \}}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00068}\mbox{\hyperlink{class_base_client_a0445334c0d4b5c9d3bfd013e8e58b288}{00068}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_base_client_a0445334c0d4b5c9d3bfd013e8e58b288}{BaseClient::ajouter}}()}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00069}00069\ \{}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00070}00070\ \ \ \ \ \textcolor{keywordtype}{int}\ num,code,su;}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00071}00071\ \ \ \ \ \textcolor{keywordtype}{string}\ nom,prenom;}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00072}00072\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00073}00073\ \ \ \ \ cout<<\textcolor{stringliteral}{"{}Num\ de\ carte:\ "{}}<<endl;}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00074}00074\ \ \ \ \ cin>>num;}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00075}00075\ \ \ \ \ Numero.push\_back(num);}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00076}00076\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00077}00077\ \ \ \ \ cout<<\textcolor{stringliteral}{"{}Nom\ client:\ "{}}<<endl;}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00078}00078\ \ \ \ \ cin>>nom;}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00079}00079\ \ \ \ \ Nom.push\_back(nom);}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00080}00080\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00081}00081\ \ \ \ \ cout<<\textcolor{stringliteral}{"{}Prenom\ client:\ "{}}<<endl;}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00082}00082\ \ \ \ \ cin>>prenom;}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00083}00083\ \ \ \ \ Prenom.push\_back(prenom);}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00084}00084\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00085}00085\ \ \ \ \ cout<<\textcolor{stringliteral}{"{}Code\ client:\ "{}}<<endl;}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00086}00086\ \ \ \ \ cin>>code;}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00087}00087\ \ \ \ \ MDP.push\_back(code);}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00088}00088\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00089}00089\ \ \ \ \ cout<<\textcolor{stringliteral}{"{}SU\ ?\ "{}}<<endl;}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00090}00090\ \ \ \ \ cin>>su;}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00091}00091\ \ \ \ \ SU.push\_back(su);}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00092}00092\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00093}00093\ \ \ \ \ NombreClient++;\ }
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00094}00094\ \ \ \ \ cout<<\textcolor{stringliteral}{"{}Client\ ajouté\ avec\ succès\ !"{}}<<endl;}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00095}00095\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00096}00096\ \}}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00103}\mbox{\hyperlink{class_base_client_a6819d4b237dc2a5b38a9d4e57fe1e6a1}{00103}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_base_client_a6819d4b237dc2a5b38a9d4e57fe1e6a1}{BaseClient::retirer}}(\textcolor{keywordtype}{int}\ numCarte)}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00104}00104\ \{}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00105}00105\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;i<NombreClient;i++)}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00106}00106\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(numCarte==Numero[i])}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ Nom[i]=\textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ Prenom[i]=\textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ MDP[i]=0;}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ SU[i]=0;}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ Numero[i]=0;}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00117}00117\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00118}00118\ \ \ \ \ cout<<\textcolor{stringliteral}{"{}Client\ retire\ avec\ succès\ !"{}}<<endl;}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00119}00119\ \}}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00127}\mbox{\hyperlink{class_base_client_a963d910a392839f12f7746ae30dbf9c8}{00127}}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_base_client_a963d910a392839f12f7746ae30dbf9c8}{BaseClient::GetNom}}(\textcolor{keywordtype}{int}\ i)}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00128}00128\ \{}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00129}00129\ \ \ \ \ \textcolor{keywordflow}{return}\ Nom[i];}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00130}00130\ \}}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00137}\mbox{\hyperlink{class_base_client_a5663e4e1cfaf590f18e8b1ed50687ef3}{00137}}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_base_client_a5663e4e1cfaf590f18e8b1ed50687ef3}{BaseClient::GetPrenom}}(\textcolor{keywordtype}{int}\ i)}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00138}00138\ \{}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00139}00139\ \ \ \ \ \textcolor{keywordflow}{return}\ Prenom[i];}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00140}00140\ \}}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00147}\mbox{\hyperlink{class_base_client_a6dd6b7d73e5aa81e7997e20d5a92d08b}{00147}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_base_client_a6dd6b7d73e5aa81e7997e20d5a92d08b}{BaseClient::GetSU}}(\textcolor{keywordtype}{int}\ i)}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00148}00148\ \{}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00149}00149\ \ \ \ \ \textcolor{keywordflow}{return}\ SU[i];}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00150}00150\ \}}
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{baseclient_8cpp_source_l00152}00152\ }
+
+\end{DoxyCode}

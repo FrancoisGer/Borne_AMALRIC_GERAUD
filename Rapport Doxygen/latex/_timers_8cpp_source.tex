@@ -1,0 +1,24 @@
+\doxysection{Timers.\+cpp}
+\hypertarget{_timers_8cpp_source}{}\label{_timers_8cpp_source}\mbox{\hyperlink{_timers_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_timers_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{_timers_8cpp_source_l00011}00011\ \textcolor{preprocessor}{\#include"{}\mbox{\hyperlink{_timers_8h}{Timers.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_timers_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_timers_8cpp_source_l00017}\mbox{\hyperlink{class_timers_a1b2e9ee6cb27d1246f7e6a888cf06556}{00017}}\ \mbox{\hyperlink{class_timers_a1b2e9ee6cb27d1246f7e6a888cf06556}{Timers::Timers}}()}
+\DoxyCodeLine{\Hypertarget{_timers_8cpp_source_l00018}00018\ \{}
+\DoxyCodeLine{\Hypertarget{_timers_8cpp_source_l00019}00019\ \ \ \ \ \_value=0;}
+\DoxyCodeLine{\Hypertarget{_timers_8cpp_source_l00020}00020\ \ \ \ \ io=acces\_memoire(\&shmid);}
+\DoxyCodeLine{\Hypertarget{_timers_8cpp_source_l00021}00021\ \ \ \ \ \textcolor{keywordflow}{if}\ (io==NULL)\ printf(\textcolor{stringliteral}{"{}Erreur\ pas\ de\ mem\ sh\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_timers_8cpp_source_l00022}00022\ \ \ \ \ depart\_timer=io-\/>timer\_sec;}
+\DoxyCodeLine{\Hypertarget{_timers_8cpp_source_l00023}00023\ \}}
+\DoxyCodeLine{\Hypertarget{_timers_8cpp_source_l00028}\mbox{\hyperlink{class_timers_a66919c6ab97f525c65baf3945f2b8e75}{00028}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_timers_a66919c6ab97f525c65baf3945f2b8e75}{Timers::raz}}()}
+\DoxyCodeLine{\Hypertarget{_timers_8cpp_source_l00029}00029\ \{}
+\DoxyCodeLine{\Hypertarget{_timers_8cpp_source_l00030}00030\ \ \ \ \ \_value=io-\/>timer\_sec;}
+\DoxyCodeLine{\Hypertarget{_timers_8cpp_source_l00031}00031\ \}}
+\DoxyCodeLine{\Hypertarget{_timers_8cpp_source_l00037}\mbox{\hyperlink{class_timers_accfaeb6aceefb9a8aa8a9ee60a63d577}{00037}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_timers_accfaeb6aceefb9a8aa8a9ee60a63d577}{Timers::GetValue}}()}
+\DoxyCodeLine{\Hypertarget{_timers_8cpp_source_l00038}00038\ \{}
+\DoxyCodeLine{\Hypertarget{_timers_8cpp_source_l00039}00039\ \ \ \ \ \_value=io-\/>timer\_sec-\/depart\_timer;}
+\DoxyCodeLine{\Hypertarget{_timers_8cpp_source_l00040}00040\ \ \ \ \ \textcolor{keywordflow}{return}\ \_value;}
+\DoxyCodeLine{\Hypertarget{_timers_8cpp_source_l00041}00041\ \}}
+
+\end{DoxyCode}

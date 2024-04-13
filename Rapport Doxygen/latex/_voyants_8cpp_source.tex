@@ -1,0 +1,94 @@
+\doxysection{Voyants.\+cpp}
+\hypertarget{_voyants_8cpp_source}{}\label{_voyants_8cpp_source}\mbox{\hyperlink{_voyants_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_voyants_8h}{Voyants.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <unistd.h>}}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00018}\mbox{\hyperlink{class_voyants_a0cb55f2ca8440b32faebe589af3ae874}{00018}}\ \mbox{\hyperlink{class_voyants_a0cb55f2ca8440b32faebe589af3ae874}{Voyants::Voyants}}()}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00019}00019\ \{}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00020}00020\ \ \ \ \ io=acces\_memoire(\&shmid);}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00021}00021\ \ \ \ \ \textcolor{keywordflow}{if}(io==NULL)}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00022}00022\ \ \ \ \ printf(\textcolor{stringliteral}{"{}erreur\ pas\ de\ mem\ sh\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00023}00023\ \}}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00030}\mbox{\hyperlink{class_voyants_a10f47633b12fd2c58596a7e8d0fd0fe4}{00030}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_voyants_a10f47633b12fd2c58596a7e8d0fd0fe4}{Voyants::BlinkCharge}}(led\ couleur)\{}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00031}00031\ \ \ \ \ \textcolor{keywordtype}{int}\ i;\ \ }
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00032}00032\ \ \ \ \ \textcolor{keywordflow}{for}(i=0;i<4;i++)\{}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00033}00033\ \ \ \ \ \mbox{\hyperlink{class_voyants_a4e320db570133139dab0702f862a8c3a}{SetCharge}}(couleur);}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00034}00034\ \ \ \ \ sleep(1);}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00035}00035\ \ \ \ \ \mbox{\hyperlink{class_voyants_a4e320db570133139dab0702f862a8c3a}{SetCharge}}(OFF);}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00036}00036\ \ \ \ \ sleep(1);}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00037}00037\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00039}00039\ \}}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00041}\mbox{\hyperlink{class_voyants_a4e320db570133139dab0702f862a8c3a}{00041}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_voyants_a4e320db570133139dab0702f862a8c3a}{Voyants::SetCharge}}(led\ couleur)}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00042}00042\ \{}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00043}00043\ \ \ \ \ io-\/>led\_charge=couleur;}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00044}00044\ \}}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00051}\mbox{\hyperlink{class_voyants_ae86e8a9cbd019b7fde395826a34f52b6}{00051}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_voyants_ae86e8a9cbd019b7fde395826a34f52b6}{Voyants::BlinkDispo}}(led\ couleur)\{}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{keywordtype}{int}\ i;\ \ }
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00053}00053\ \ \ \ \ \textcolor{keywordflow}{for}(i=0;i<4;i++)\{}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00054}00054\ \ \ \ \ \mbox{\hyperlink{class_voyants_a29ff6cc320e7589c4af719a7eb5d4804}{SetDispo}}(couleur);}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00055}00055\ \ \ \ \ sleep(1);}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00056}00056\ \ \ \ \ \mbox{\hyperlink{class_voyants_a29ff6cc320e7589c4af719a7eb5d4804}{SetDispo}}(OFF);}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00057}00057\ \ \ \ \ sleep(1);}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00058}00058\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00060}00060\ \}}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00067}\mbox{\hyperlink{class_voyants_a29ff6cc320e7589c4af719a7eb5d4804}{00067}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_voyants_a29ff6cc320e7589c4af719a7eb5d4804}{Voyants::SetDispo}}(led\ couleur)}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00068}00068\ \{}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00069}00069\ \ \ \ \ io-\/>led\_dispo=couleur;}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00070}00070\ \}}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00077}\mbox{\hyperlink{class_voyants_a11ade34b58bf3382154b8fc458b769d7}{00077}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_voyants_a11ade34b58bf3382154b8fc458b769d7}{Voyants::BlinkPrise}}(led\ couleur)\{}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00078}00078\ \ \ \ \ \textcolor{keywordtype}{int}\ i;\ \ }
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00079}00079\ \ \ \ \ \textcolor{keywordflow}{for}(i=0;i<4;i++)\{}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00080}00080\ \ \ \ \ \mbox{\hyperlink{class_voyants_aa8ee1b89da56867d4d0b0f55ca88a607}{SetPrise}}(couleur);}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00081}00081\ \ \ \ \ sleep(1);}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00082}00082\ \ \ \ \ \mbox{\hyperlink{class_voyants_aa8ee1b89da56867d4d0b0f55ca88a607}{SetPrise}}(OFF);}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00083}00083\ \ \ \ \ sleep(1);}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00084}00084\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00086}00086\ \}}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00093}\mbox{\hyperlink{class_voyants_aa8ee1b89da56867d4d0b0f55ca88a607}{00093}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_voyants_aa8ee1b89da56867d4d0b0f55ca88a607}{Voyants::SetPrise}}(led\ couleur)}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00094}00094\ \{}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00095}00095\ \ \ \ \ io-\/>led\_prise=couleur;}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00096}00096\ \}}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00103}\mbox{\hyperlink{class_voyants_a7f66701c4c76b3ce2ce8bdcb8d18700a}{00103}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_voyants_a7f66701c4c76b3ce2ce8bdcb8d18700a}{Voyants::BlinkTrappe}}(led\ couleur)\{}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00104}00104\ \ \ \ \ \textcolor{keywordtype}{int}\ i;\ \ }
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00105}00105\ \ \ \ \ \textcolor{keywordflow}{for}(i=0;i<4;i++)\{}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00106}00106\ \ \ \ \ \mbox{\hyperlink{class_voyants_aab1b84eab067d7e341fbfa9ac461f593}{SetTrappe}}(couleur);}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00107}00107\ \ \ \ \ sleep(1);}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00108}00108\ \ \ \ \ \mbox{\hyperlink{class_voyants_aab1b84eab067d7e341fbfa9ac461f593}{SetTrappe}}(OFF);}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00109}00109\ \ \ \ \ sleep(1);}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00110}00110\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00112}00112\ \}}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00119}\mbox{\hyperlink{class_voyants_aab1b84eab067d7e341fbfa9ac461f593}{00119}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_voyants_aab1b84eab067d7e341fbfa9ac461f593}{Voyants::SetTrappe}}(led\ couleur)}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00120}00120\ \{}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00121}00121\ \ \ \ \ io-\/>led\_trappe=couleur;}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00122}00122\ \}}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00129}\mbox{\hyperlink{class_voyants_abf57b625d45c4c1453c4c3c56947a8d0}{00129}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_voyants_abf57b625d45c4c1453c4c3c56947a8d0}{Voyants::BlinkDefaut}}(led\ couleur)\{}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00130}00130\ \ \ \ \ \textcolor{keywordtype}{int}\ i;\ \ }
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00131}00131\ \ \ \ \ \textcolor{keywordflow}{for}(i=0;i<4;i++)\{}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00132}00132\ \ \ \ \ \mbox{\hyperlink{class_voyants_aef4272954c747da64ab2a68b516be4f7}{SetDefaut}}(couleur);}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00133}00133\ \ \ \ \ sleep(1);}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00134}00134\ \ \ \ \ \mbox{\hyperlink{class_voyants_aef4272954c747da64ab2a68b516be4f7}{SetDefaut}}(OFF);}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00135}00135\ \ \ \ \ sleep(1);}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00136}00136\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00138}00138\ \}}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00144}\mbox{\hyperlink{class_voyants_aef4272954c747da64ab2a68b516be4f7}{00144}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_voyants_aef4272954c747da64ab2a68b516be4f7}{Voyants::SetDefaut}}(led\ couleur)}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00145}00145\ \{}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00146}00146\ \ \ \ \ io-\/>led\_defaut=couleur;}
+\DoxyCodeLine{\Hypertarget{_voyants_8cpp_source_l00147}00147\ \}}
+
+\end{DoxyCode}

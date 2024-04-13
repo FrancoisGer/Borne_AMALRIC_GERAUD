@@ -1,0 +1,148 @@
+\doxysection{borne.\+cpp}
+\hypertarget{borne_8cpp_source}{}\label{borne_8cpp_source}\mbox{\hyperlink{borne_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}memoire\_borne.h"{}}}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}donnees\_borne.h"{}}}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00014}00014\ \textcolor{preprocessor}{\#include<donnees.h>}}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00015}00015\ \textcolor{preprocessor}{\#include<mem\_sh.h>}}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00017}00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{lecteurcarte_8h}{lecteurcarte.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00018}00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{baseclient_8h}{baseclient.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00019}00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{charge_8h}{charge.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00020}00020\ \textcolor{preprocessor}{\#include\ <unistd.h>}}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00023}\mbox{\hyperlink{borne_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00023}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{borne_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00024}00024\ \{}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00025}00025\ \ \ \ \ \textcolor{keywordtype}{int}\ CarteLue,user=0,choix=0;\ \textcolor{comment}{//<\ Variables\ relatives\ au\ lecteur\ de\ carte}}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00026}00026\ \ \ \ \ \textcolor{keywordtype}{int}\ time=0;\ \textcolor{comment}{//<\ Stockage\ du\ temps\ pour\ les\ timers}}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{keywordtype}{int}\ shmid;\ \textcolor{comment}{//<\ Accès\ mémoire}}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00028}00028\ \ \ \ \ \textcolor{keywordtype}{int}\ currentuser;\ \textcolor{comment}{//<\ Variable\ stockant\ l'utilisateur\ actuel\ pour\ la\ reprise\ du\ véhicule}}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00029}00029\ \ \ \ \ entrees\ *\ io;\ \textcolor{comment}{//<\ Accès\ mémoire}}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00030}00030\ \ \ \ \ io=acces\_memoire(\&shmid);\ \textcolor{comment}{//<\ Accès\ mémoire}}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00031}00031\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00033}00033\ \ \ \ \ \mbox{\hyperlink{class_lecteur_carte}{LecteurCarte}}\ lecteurcarte;}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00034}00034\ \ \ \ \ \mbox{\hyperlink{class_base_client}{BaseClient}}\ ListeClient;}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00035}00035\ \ \ \ \ \mbox{\hyperlink{class_voyants}{Voyants}}\ voyant;}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00036}00036\ \ \ \ \ \mbox{\hyperlink{class_timers}{Timers}}\ timer;}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00037}00037\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00038}00038\ \ \ \ \ \textcolor{keywordflow}{while}\ (1)}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00039}00039\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Début\ du\ programme\ et\ gestion\ du\ lecteur\ de\ carte}}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ cout<<\textcolor{stringliteral}{"{}Inserez\ votre\ carte"{}}<<endl;}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ lecteurcarte.\mbox{\hyperlink{class_lecteur_carte_a723859d389df0d286a553d39ec77a11f}{initialiser}}();}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ lecteurcarte.\mbox{\hyperlink{class_lecteur_carte_a90e4f75fb492935ebaf5f908173763af}{lire\_carte}}();}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ CarteLue=lecteurcarte.\mbox{\hyperlink{class_lecteur_carte_a42092ab5efccbf5070785288382e1578}{GetNumCarte}}();}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ user=ListeClient.\mbox{\hyperlink{class_base_client_acda6b6e3d331ece35e513b31fcf2bbc4}{identifier}}(CarteLue);}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(user\ !=\ -\/1)}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ cout<<\textcolor{stringliteral}{"{}user:\ "{}}<<ListeClient.\mbox{\hyperlink{class_base_client_a963d910a392839f12f7746ae30dbf9c8}{GetNom}}(user)<<\textcolor{stringliteral}{"{}\ "{}}<<ListeClient.\mbox{\hyperlink{class_base_client_a5663e4e1cfaf590f18e8b1ed50687ef3}{GetPrenom}}(user)<<\textcolor{stringliteral}{"{}\ identifié\ avec\ succès"{}}<<endl;}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ currentuser=user;}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(ListeClient.\mbox{\hyperlink{class_base_client_a6dd6b7d73e5aa81e7997e20d5a92d08b}{GetSU}}(user)==1)}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout<<\textcolor{stringliteral}{"{}Pour\ ajouter\ taper\ 1\ |\ \ Pour\ effacer\ taper\ 2\ |0\ pour\ retour\ :"{}}<<endl;}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cin>>choix;}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}(choix)}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}(1):}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ListeClient.\mbox{\hyperlink{class_base_client_a0445334c0d4b5c9d3bfd013e8e58b288}{ajouter}}();}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ choix=0;}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}(2):}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout<<\textcolor{stringliteral}{"{}Quel\ client\ retirer\ ?"{}}<<endl;}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cin>>choix;}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ListeClient.\mbox{\hyperlink{class_base_client_a6819d4b237dc2a5b38a9d4e57fe1e6a1}{retirer}}(choix);}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ choix=0;}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00072}00072\ \ \ \ \ \textcolor{comment}{//Début\ de\ la\ partie\ sur\ la\ borne\ simulée}}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00073}00073\ \ \ \ \ voyant.\mbox{\hyperlink{class_voyants_a4e320db570133139dab0702f862a8c3a}{SetCharge}}(VERT);}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00075}00075\ \ \ \ \ timer.\mbox{\hyperlink{class_timers_a66919c6ab97f525c65baf3945f2b8e75}{raz}}();}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00076}00076\ \ \ \ \ \textcolor{keywordflow}{while}\ (io\ -\/>\ bouton\_charge!=1\ ||\ time>=10)\{}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00077}00077\ \ \ \ \ time=timer.\mbox{\hyperlink{class_timers_accfaeb6aceefb9a8aa8a9ee60a63d577}{GetValue}}();}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00078}00078\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00081}00081\ \ \ \ \ \textcolor{keywordflow}{if}(time<10)\{}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ voyant.\mbox{\hyperlink{class_voyants_a29ff6cc320e7589c4af719a7eb5d4804}{SetDispo}}(OFF);\ \textcolor{comment}{//Gestion\ des\ LEDS}}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ voyant.\mbox{\hyperlink{class_voyants_a4e320db570133139dab0702f862a8c3a}{SetCharge}}(ROUGE);}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ voyant.\mbox{\hyperlink{class_voyants_aab1b84eab067d7e341fbfa9ac461f593}{SetTrappe}}(VERT);}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ io-\/>gene\_pwm=DC;\ \textcolor{comment}{//io-\/>gene\_u=12;}}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}((io-\/>gene\_u)!=9)}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ sleep(1);\textcolor{comment}{//\ Processeur\ trop\ rapide\ donc\ on\ met\ des\ sleep\ }}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ voyant.\mbox{\hyperlink{class_voyants_aab1b84eab067d7e341fbfa9ac461f593}{SetTrappe}}(OFF);}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ voyant.\mbox{\hyperlink{class_voyants_aa8ee1b89da56867d4d0b0f55ca88a607}{SetPrise}}(VERT);}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ sleep(1);}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ io-\/>gene\_pwm=AC\_1K;}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ sleep(1);}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00093}00093\ \ \ \ \ sleep(1);}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00094}00094\ \ \ \ \ io-\/>contacteur\_AC=1;}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00095}00095\ \ \ \ \ io-\/>gene\_pwm=AC\_CL;}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00097}00097\ \ \ \ \ sleep(1);}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00099}00099\ \ \ \ \ \textcolor{keywordflow}{while}((io-\/>gene\_u)!=9)\{}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ sleep(1);\textcolor{comment}{//\ proco\ trop\ rapide\ }}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ std::cout<<\textcolor{stringliteral}{"{}En\ charge..."{}}<<std::endl;}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(io-\/>bouton\_stop==1)}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ io-\/>gene\_u=9;}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00105}00105\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00106}00106\ \ \ \ \ io-\/>contacteur\_AC=0;}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00107}00107\ \ \ \ \ io-\/>gene\_pwm=DC;}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00108}00108\ \ \ \ \ io-\/>gene\_u=9;}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00109}00109\ \ \ \ \ voyant.\mbox{\hyperlink{class_voyants_a4e320db570133139dab0702f862a8c3a}{SetCharge}}(VERT);}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00110}00110\ \ \ \ \ sleep(1);}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00111}00111\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00112}00112\ \ \ \ \ \textcolor{comment}{//Reprise\ du\ véhicule\ ne\ fonctionne\ pas\ à\ cause\ d'un\ problème\ sur\ l'initialisation/libération\ des\ ports}}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00113}00113\ \ \ \ \ \textcolor{comment}{/*lecteurcarte.initialiser();}}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00114}00114\ \textcolor{comment}{\ \ \ \ attente\_insertion\_carte();}}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00115}00115\ \textcolor{comment}{\ \ \ \ do\{}}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00116}00116\ \textcolor{comment}{\ \ \ \ lecteurcarte.initialiser();}}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00117}00117\ \textcolor{comment}{\ \ \ \ lecteurcarte.lire\_carte();}}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00118}00118\ \textcolor{comment}{\ \ \ \ \ \ \ \ CarteLue=lecteurcarte.GetNumCarte();}}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00119}00119\ \textcolor{comment}{\ \ \ \ \}while(CarteLue!=currentuser);*/}}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00121}00121\ \ \ \ \ voyant.\mbox{\hyperlink{class_voyants_aab1b84eab067d7e341fbfa9ac461f593}{SetTrappe}}(VERT);}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00122}00122\ \ \ \ \ \textcolor{keywordflow}{while}((io-\/>gene\_u)!=12)}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00123}00123\ \ \ \ \ sleep(1);\textcolor{comment}{//\ proco\ trop\ rapide\ }}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00124}00124\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00125}00125\ \ \ \ \ std::cout<<\textcolor{stringliteral}{"{}Vroum\ Vroum"{}}<<std::endl;}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00126}00126\ \ \ \ \ voyant.\mbox{\hyperlink{class_voyants_aab1b84eab067d7e341fbfa9ac461f593}{SetTrappe}}(OFF);}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00127}00127\ \ \ \ \ voyant.\mbox{\hyperlink{class_voyants_aa8ee1b89da56867d4d0b0f55ca88a607}{SetPrise}}(OFF);}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00128}00128\ \ \ \ \ voyant.\mbox{\hyperlink{class_voyants_a4e320db570133139dab0702f862a8c3a}{SetCharge}}(OFF);}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00129}00129\ \ \ \ \ voyant.\mbox{\hyperlink{class_voyants_a29ff6cc320e7589c4af719a7eb5d4804}{SetDispo}}(VERT);}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00132}00132\ \ \ \ \ timer.\mbox{\hyperlink{class_timers_a66919c6ab97f525c65baf3945f2b8e75}{raz}}();}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00133}00133\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00135}00135\ \ \ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ voyant.\mbox{\hyperlink{class_voyants_a29ff6cc320e7589c4af719a7eb5d4804}{SetDispo}}(VERT);}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ voyant.\mbox{\hyperlink{class_voyants_a4e320db570133139dab0702f862a8c3a}{SetCharge}}(OFF);}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00138}00138\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00139}00139\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00140}00140\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00141}00141\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout<<\textcolor{stringliteral}{"{}Vous\ n'étes\ pas\ enregistré,\ contacter\ un\ Administrateur."{}}<<endl;}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00149}00149\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00150}00150\ \}}
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{borne_8cpp_source_l00152}00152\ \}}
+
+\end{DoxyCode}

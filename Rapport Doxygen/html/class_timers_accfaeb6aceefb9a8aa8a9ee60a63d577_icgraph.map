@@ -1,0 +1,7 @@
+<map id="Timers::GetValue" name="Timers::GetValue">
+<area shape="rect" id="Node000001" title="Retourne la valeur en seconde du timer." alt="" coords="194,31,316,57"/>
+<area shape="rect" id="Node000002" href="$class_charge.html#a9bedcd74799a55cfa293d282f9134cbd" title=" " alt="" coords="5,5,146,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="178,36,146,31,146,26,179,31"/>
+<area shape="rect" id="Node000003" href="$borne_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="51,56,100,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="179,57,101,69,100,63,178,52"/>
+</map>

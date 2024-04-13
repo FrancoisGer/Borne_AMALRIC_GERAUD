@@ -1,0 +1,12 @@
+<map id="lecteurcarte.h" name="lecteurcarte.h">
+<area shape="rect" id="Node000001" title="Fichier bibliothèque du lecteur de carte." alt="" coords="68,5,168,32"/>
+<area shape="rect" id="Node000002" href="$borne_8cpp.html" title="Programme principal de gestion de la borne de recharge." alt="" coords="5,155,84,181"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,45,72,81,57,121,49,155,44,154,52,119,67,79,93,42"/>
+<area shape="rect" id="Node000003" href="$charge_8h.html" title="Fichier bibliothèque de la charge." alt="" coords="82,80,154,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="121,48,121,80,115,80,115,48"/>
+<area shape="rect" id="Node000005" href="$lecteurcarte_8cpp.html" title="Programme de gestion du lecteur de carte." alt="" coords="178,80,292,107"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="152,38,216,77,213,82,149,43"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="96,120,59,156,55,152,92,116"/>
+<area shape="rect" id="Node000004" href="$charge_8cpp.html" title="Programme effectuant la charge de la voiture (N&#39;est pas appelé dans borne.cpp)" alt="" coords="107,155,193,181"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="132,120,147,153,142,155,127,122"/>
+</map>

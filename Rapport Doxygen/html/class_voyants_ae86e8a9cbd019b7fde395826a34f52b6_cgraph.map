@@ -1,0 +1,5 @@
+<map id="Voyants::BlinkDispo" name="Voyants::BlinkDispo">
+<area shape="rect" id="Node000001" title="Fait clignoter la led Dispo." alt="" coords="5,5,145,32"/>
+<area shape="rect" id="Node000002" href="$class_voyants.html#a29ff6cc320e7589c4af719a7eb5d4804" title="Donne une couleur fixe à la led Dispo." alt="" coords="193,5,323,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="145,16,177,16,177,21,145,21"/>
+</map>

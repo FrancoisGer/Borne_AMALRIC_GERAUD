@@ -1,0 +1,97 @@
+\doxysection{charge.\+cpp}
+\hypertarget{charge_8cpp_source}{}\label{charge_8cpp_source}\mbox{\hyperlink{charge_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{charge_8h}{charge.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_voyants_8h}{Voyants.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_timers_8h}{Timers.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{baseclient_8h}{baseclient.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00015}\mbox{\hyperlink{class_charge_a9bedcd74799a55cfa293d282f9134cbd}{00015}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_charge_a9bedcd74799a55cfa293d282f9134cbd}{Charge::Chargement}}()\{}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00019}00019\ \ \ \ \ \textcolor{keywordtype}{int}\ CarteLue,user=0,choix=0;}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00020}00020\ \ \ \ \ \textcolor{keywordtype}{int}\ time=0;}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00021}00021\ \ \ \ \ \textcolor{keywordtype}{int}\ shmid;}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00022}00022\ \ \ \ \ \textcolor{keywordtype}{int}\ currentuser;}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00023}00023\ \ \ \ \ entrees\ *\ io;}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00024}00024\ \ \ \ \ io=acces\_memoire(\&shmid);}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_lecteur_carte}{LecteurCarte}}\ lecteurcarte;}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00028}00028\ \ \ \ \ \mbox{\hyperlink{class_base_client}{BaseClient}}\ ListeClient;}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00029}00029\ \ \ \ \ \mbox{\hyperlink{class_voyants}{Voyants}}\ voyant;}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00030}00030\ \ \ \ \ \mbox{\hyperlink{class_timers}{Timers}}\ timer;}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00032}00032\ \ \ \ \ timer.\mbox{\hyperlink{class_timers_a66919c6ab97f525c65baf3945f2b8e75}{raz}}();}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00033}00033\ \ \ \ \ \textcolor{keywordflow}{while}\ (io\ -\/>\ bouton\_charge!=1\ ||\ time>=10)\{}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00034}00034\ \ \ \ \ time=timer.\mbox{\hyperlink{class_timers_accfaeb6aceefb9a8aa8a9ee60a63d577}{GetValue}}();}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00035}00035\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00038}00038\ \ \ \ \ \textcolor{keywordflow}{if}(time<10)\{}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ voyant.\mbox{\hyperlink{class_voyants_a29ff6cc320e7589c4af719a7eb5d4804}{SetDispo}}(OFF);\ \textcolor{comment}{//Gestion\ des\ LEDS}}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ voyant.\mbox{\hyperlink{class_voyants_a4e320db570133139dab0702f862a8c3a}{SetCharge}}(ROUGE);}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ voyant.\mbox{\hyperlink{class_voyants_aab1b84eab067d7e341fbfa9ac461f593}{SetTrappe}}(VERT);}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ io-\/>gene\_pwm=DC;\ \textcolor{comment}{//io-\/>gene\_u=12;}}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}((io-\/>gene\_u)!=9);}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ sleep(1);\textcolor{comment}{//\ Processeur\ trop\ rapide\ donc\ on\ met\ des\ sleep\ }}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ voyant.\mbox{\hyperlink{class_voyants_aab1b84eab067d7e341fbfa9ac461f593}{SetTrappe}}(OFF);}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ voyant.\mbox{\hyperlink{class_voyants_aa8ee1b89da56867d4d0b0f55ca88a607}{SetPrise}}(VERT);}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ sleep(1);}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ io-\/>gene\_pwm=AC\_1K;}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ sleep(1);}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00050}00050\ \ \ \ \ sleep(1);}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00051}00051\ \ \ \ \ io-\/>contacteur\_AC=1;}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00052}00052\ \ \ \ \ io-\/>gene\_pwm=AC\_CL;}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00054}00054\ \ \ \ \ sleep(1);}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00056}00056\ \ \ \ \ \textcolor{keywordflow}{while}((io-\/>gene\_u)!=9)\{}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ sleep(1);\textcolor{comment}{//\ proco\ trop\ rapide\ }}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ std::cout<<\textcolor{stringliteral}{"{}En\ charge..."{}}<<std::endl;}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(io-\/>bouton\_stop==1)}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ io-\/>gene\_u=9;}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00062}00062\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00063}00063\ \ \ \ \ io-\/>contacteur\_AC=0;}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00064}00064\ \ \ \ \ io-\/>gene\_pwm=DC;}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00065}00065\ \ \ \ \ io-\/>gene\_u=9;}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00066}00066\ \ \ \ \ voyant.\mbox{\hyperlink{class_voyants_a4e320db570133139dab0702f862a8c3a}{SetCharge}}(VERT);}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00067}00067\ \ \ \ \ sleep(1);}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00068}00068\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00069}00069\ \ \ \ \ \textcolor{comment}{/*lecteurcarte.initialiser();}}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00070}00070\ \textcolor{comment}{\ \ \ \ attente\_insertion\_carte();}}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00071}00071\ \textcolor{comment}{\ \ \ \ do\{}}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00072}00072\ \textcolor{comment}{\ \ \ \ lecteurcarte.initialiser();}}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00073}00073\ \textcolor{comment}{\ \ \ \ lecteurcarte.lire\_carte();}}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00074}00074\ \textcolor{comment}{\ \ \ \ \ \ \ \ CarteLue=lecteurcarte.GetNumCarte();}}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00075}00075\ \textcolor{comment}{\ \ \ \ \}while(CarteLue!=currentuser);*/}}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00077}00077\ \ \ \ \ voyant.\mbox{\hyperlink{class_voyants_aab1b84eab067d7e341fbfa9ac461f593}{SetTrappe}}(VERT);}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00078}00078\ \ \ \ \ \textcolor{keywordflow}{while}((io-\/>gene\_u)!=12)}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00079}00079\ \ \ \ \ sleep(1);\textcolor{comment}{//\ proco\ trop\ rapide\ }}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00080}00080\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00081}00081\ \ \ \ \ std::cout<<\textcolor{stringliteral}{"{}Vroum\ Vroum"{}}<<std::endl;}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00082}00082\ \ \ \ \ voyant.\mbox{\hyperlink{class_voyants_aab1b84eab067d7e341fbfa9ac461f593}{SetTrappe}}(OFF);}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00083}00083\ \ \ \ \ voyant.\mbox{\hyperlink{class_voyants_aa8ee1b89da56867d4d0b0f55ca88a607}{SetPrise}}(OFF);}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00084}00084\ \ \ \ \ voyant.\mbox{\hyperlink{class_voyants_a4e320db570133139dab0702f862a8c3a}{SetCharge}}(OFF);}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00085}00085\ \ \ \ \ voyant.\mbox{\hyperlink{class_voyants_a29ff6cc320e7589c4af719a7eb5d4804}{SetDispo}}(VERT);}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00088}00088\ \ \ \ \ timer.\mbox{\hyperlink{class_timers_a66919c6ab97f525c65baf3945f2b8e75}{raz}}();}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00089}00089\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00091}00091\ \ \ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ voyant.\mbox{\hyperlink{class_voyants_a29ff6cc320e7589c4af719a7eb5d4804}{SetDispo}}(VERT);}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ voyant.\mbox{\hyperlink{class_voyants_a4e320db570133139dab0702f862a8c3a}{SetCharge}}(OFF);}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00094}00094\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00095}00095\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00096}00096\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00097}00097\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00098}00098\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{charge_8cpp_source_l00100}00100\ }
+
+\end{DoxyCode}

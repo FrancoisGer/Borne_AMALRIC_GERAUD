@@ -1,0 +1,30 @@
+\doxysection{lecteurcarte.\+cpp}
+\hypertarget{lecteurcarte_8cpp_source}{}\label{lecteurcarte_8cpp_source}\mbox{\hyperlink{lecteurcarte_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{lecteurcarte_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{lecteurcarte_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{lecteurcarte_8h}{lecteurcarte.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{lecteurcarte_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{lecteurcarte_8cpp_source_l00012}\mbox{\hyperlink{class_lecteur_carte_a723859d389df0d286a553d39ec77a11f}{00012}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lecteur_carte_a723859d389df0d286a553d39ec77a11f}{LecteurCarte::initialiser}}()}
+\DoxyCodeLine{\Hypertarget{lecteurcarte_8cpp_source_l00013}00013\ \{}
+\DoxyCodeLine{\Hypertarget{lecteurcarte_8cpp_source_l00014}00014\ \ \ \ \ initialisations\_ports();\ \textcolor{comment}{//initialisation\ des\ ports\ du\ lecteur\ de\ carte}}
+\DoxyCodeLine{\Hypertarget{lecteurcarte_8cpp_source_l00015}00015\ \}}
+\DoxyCodeLine{\Hypertarget{lecteurcarte_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{lecteurcarte_8cpp_source_l00017}\mbox{\hyperlink{class_lecteur_carte_a90e4f75fb492935ebaf5f908173763af}{00017}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_lecteur_carte_a90e4f75fb492935ebaf5f908173763af}{LecteurCarte::lire\_carte}}()}
+\DoxyCodeLine{\Hypertarget{lecteurcarte_8cpp_source_l00018}00018\ \{}
+\DoxyCodeLine{\Hypertarget{lecteurcarte_8cpp_source_l00019}00019\ \ \ \ \ \_NumCarte=0;}
+\DoxyCodeLine{\Hypertarget{lecteurcarte_8cpp_source_l00020}00020\ \ \ \ \ attente\_insertion\_carte();\ \textcolor{comment}{//attente\ de\ l'insertion\ d'une\ carte}}
+\DoxyCodeLine{\Hypertarget{lecteurcarte_8cpp_source_l00021}00021\ \ \ \ \ \textcolor{keywordflow}{if}(carte\_inseree())\ \textcolor{comment}{//\ si\ la\ carte\ est\ inserée}}
+\DoxyCodeLine{\Hypertarget{lecteurcarte_8cpp_source_l00022}00022\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{lecteurcarte_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \_NumCarte=lecture\_numero\_carte();\ \textcolor{comment}{//\ récupération\ du\ numéro\ de\ la\ carte}}
+\DoxyCodeLine{\Hypertarget{lecteurcarte_8cpp_source_l00024}00024\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{lecteurcarte_8cpp_source_l00025}00025\ \ \ \ \ cout<<\textcolor{stringliteral}{"{}numéro\ lu:"{}}<<\_NumCarte<<endl;\ \textcolor{comment}{//\ affichage\ du\ numéro\ de\ la\ carte}}
+\DoxyCodeLine{\Hypertarget{lecteurcarte_8cpp_source_l00026}00026\ \ \ \ \ attente\_retrait\_carte();}
+\DoxyCodeLine{\Hypertarget{lecteurcarte_8cpp_source_l00027}00027\ \ \ \ \ liberation\_ports();}
+\DoxyCodeLine{\Hypertarget{lecteurcarte_8cpp_source_l00028}00028\ \}}
+\DoxyCodeLine{\Hypertarget{lecteurcarte_8cpp_source_l00029}\mbox{\hyperlink{class_lecteur_carte_a42092ab5efccbf5070785288382e1578}{00029}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_lecteur_carte_a42092ab5efccbf5070785288382e1578}{LecteurCarte::GetNumCarte}}()}
+\DoxyCodeLine{\Hypertarget{lecteurcarte_8cpp_source_l00030}00030\ \{}
+\DoxyCodeLine{\Hypertarget{lecteurcarte_8cpp_source_l00031}00031\ \ \ \ \ \textcolor{keywordflow}{return}\ \_NumCarte;}
+\DoxyCodeLine{\Hypertarget{lecteurcarte_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{lecteurcarte_8cpp_source_l00033}00033\ \}}
+
+\end{DoxyCode}
